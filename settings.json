@@ -1,13 +1,13 @@
 {
-  "name": "AFK Bot",
+  "name": "SELVIX ASSISTANT",
   "bot-account": {
-    "username": "SoloCloudHosting",
+    "username": "SELVIX",
     "password": "",
     "type": "offline"
   },
   "server": {
-    "ip": "solocloud.host",
-    "port": 25565,
+    "ip": "THE-SHADOWS.aternos.me",
+    "port": 12969,
     "version": "1.20.1",
     "try-creative": false
   },
@@ -23,12 +23,12 @@
       "password": "SoloPlayz"
     },
     "anti-afk": {
-      "enabled": true,
-      "sneak": true
+      "enabled": false,
+      "sneak": false
     },
     "chat-messages": {
-      "enabled": true,
-      "repeat": true,
+      "enabled": false,
+      "repeat": false,
       "repeat-delay": 120,
       "messages": [
         "I'm a regular player",
@@ -59,7 +59,7 @@
   },
   "modules": {
     "avoidMobs": true,
-    "combat": true,
+    "combat": false,
     "beds": false,
     "chat": true,
     "console-commands": true
@@ -77,7 +77,7 @@
     "webhookUrl": "",
     "events": {
       "connect": true,
-      "disconnect": true,
+      "disconnect": false,
       "chat": false
     }
   },

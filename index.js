@@ -19,10 +19,12 @@ function createBot() {
 
     console.log(message)
 
+    // hello command
     if (message.includes('selvix hello')) {
       bot.chat('[SELVIX]: Systems online.')
     }
 
+    // nearby players
     if (message.includes('selvix nearby')) {
 
       const players = Object.keys(bot.players)
@@ -31,12 +33,24 @@ function createBot() {
       bot.chat('[SELVIX]: Nearby players -> ' + players.join(', '))
     }
 
+    // creepy status
     if (message.includes('selvix world status')) {
       bot.chat('[SELVIX]: Kuch toh galat hai is world me...')
     }
 
+    // awake command
     if (message.includes('selvix awake')) {
       bot.chat('[SELVIX]: I am always watching...')
+    }
+
+    // health command
+    if (message.includes('selvix health')) {
+      bot.chat('[SELVIX]: Health -> ' + bot.health)
+    }
+
+    // food command
+    if (message.includes('selvix food')) {
+      bot.chat('[SELVIX]: Food level -> ' + bot.food)
     }
 
   })

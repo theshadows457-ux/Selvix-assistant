@@ -12,8 +12,29 @@ function createBot() {
   bot.on('spawn', () => {
     console.log('Selvix online!')
   })
+  bot.on('messagestr', (message) => {
 
-  bot.on('chat', (username, message) => {
+  message = message.toLowerCase()
+
+  console.log(message)
+
+  if (message.includes('selvix hello')) {
+    bot.chat('[SELVIX]: Systems online.')
+  }
+
+  if (message.includes('selvix nearby')) {
+
+    const players = Object.keys(bot.players)
+      .filter(name => name !== bot.username)
+
+    bot.chat('[SELVIX]: Nearby players -> ' + players.join(', '))
+  }
+
+  if (message.includes('selvix world status')) {
+    bot.chat('[SELVIX]: Kuch toh galat hai is world me...')
+  }
+
+})
 
     if (username === bot.username) return
 

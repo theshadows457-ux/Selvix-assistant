@@ -21,6 +21,20 @@ function createBot() {
       bot.chat('[SELVIX]: Systems online.')
     }
 
+  if (message.toLowerCase() === '/selvix nearby') {
+
+    const players = Object.keys(bot.players)
+      .filter(name => name !== bot.username)
+
+    bot.chat('[SELVIX]: Nearby players -> ' + players.join(', '))
+  }
+
+  if (message.toLowerCase() === '/selvix lore') {
+
+    bot.chat('[SELVIX]: Kuch toh galat hai is world me...')
+  }
+
+})
   })
 
   bot.on('end', () => {

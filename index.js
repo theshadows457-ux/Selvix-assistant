@@ -12,58 +12,43 @@ function createBot() {
   bot.on('spawn', () => {
     console.log('Selvix online!')
   })
+
   bot.on('messagestr', (message) => {
 
-  message = message.toLowerCase()
+    message = message.toLowerCase()
 
-  console.log(message)
+    console.log(message)
 
-  if (message.includes('selvix hello')) {
-    bot.chat('[SELVIX]: Systems online.')
-  }
-
-  if (message.includes('selvix nearby')) {
-
-    const players = Object.keys(bot.players)
-      .filter(name => name !== bot.username)
-
-    bot.chat('[SELVIX]: Nearby players -> ' + players.join(', '))
-  }
-
-  if (message.includes('selvix world status')) {
-    bot.chat('[SELVIX]: Kuch toh galat hai is world me...')
-  }
-
-})
-
-    if (username === bot.username) return
-
-    if (message.toLowerCase() === 'selvix hello') {
+    if (message.includes('selvix hello')) {
       bot.chat('[SELVIX]: Systems online.')
     }
 
-  if (message.toLowerCase() === 'selvix nearby') {
+    if (message.includes('selvix nearby')) {
 
-    const players = Object.keys(bot.players)
-      .filter(name => name !== bot.username)
+      const players = Object.keys(bot.players)
+        .filter(name => name !== bot.username)
 
-    bot.chat('[SELVIX]: Nearby players -> ' + players.join(', '))
-  }
+      bot.chat('[SELVIX]: Nearby players -> ' + players.join(', '))
+    }
 
-  if (message.toLowerCase() === 'selvix world status') {
+    if (message.includes('selvix world status')) {
+      bot.chat('[SELVIX]: Kuch toh galat hai is world me...')
+    }
 
-    bot.chat('[SELVIX]: Kuch toh galat hai is world me...')
-  }
+    if (message.includes('selvix awake')) {
+      bot.chat('[SELVIX]: I am always watching...')
+    }
 
-})
   })
 
   bot.on('end', () => {
+
     console.log('Disconnected... reconnecting')
 
     setTimeout(() => {
       createBot()
     }, 5000)
+
   })
 
 }
